@@ -23,6 +23,7 @@
  $filter->addItem(api_text("documents_list-filter-categories"),$categories_array,"fkCategory",null,"categories");
  // build query object
  $query=new cQuery("archive__documents",$filter->getQueryWhere());
+ $query->addQueryOrderField("date","desc");
  $query->addQueryOrderField("id","desc");
  // build pagination object
  $pagination=new strPagination($query->getRecordsCount());
@@ -33,6 +34,7 @@
  $table->addHeader($filter->link(api_icon("fa-filter",api_text("filters-modal-link"),"hidden-link")),"text-center",16);
  $table->addHeader(api_text("cArchiveDocument-property-id"),"nowrap");
  $table->addHeader("&nbsp;",null,16);
+ $table->addHeader(api_text("cArchiveDocument-property-date"),"nowrap");
  $table->addHeader(api_text("cArchiveDocument-property-name"),null,"100%");
  $table->addHeader("&nbsp;",null,16);
  // cycle all documents
@@ -51,6 +53,7 @@
   $table->addRowFieldAction(api_url(["scr"=>"documents_view","idDocument"=>$document_fobj->id]),"fa-search",api_text("table-td-view"));
   $table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
   $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-right");
+  $table->addRowField(api_date_format($document_fobj->date,api_text("date")),"nowrap");
   $table->addRowField($document_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
  }
