@@ -86,7 +86,7 @@
      api_alerts_add(api_text("cArchiveDocument-alert-stored"),"success"); /** @todo specific alert? */
      break;
     case "download":
-     $document_obj->download($_REQUEST["file"],$_REQUEST["force"]);
+     $document_obj->download($_REQUEST["force"]);
      break;
     case "delete":
      $document_obj->delete();
