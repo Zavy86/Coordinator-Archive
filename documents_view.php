@@ -21,7 +21,7 @@
  if(!defined(TAB)){define("TAB","informations");}
  // build document description list
  $left_dl=new strDescriptionList("br","dl-horizontal");
- $left_dl->addElement(api_text("cArchiveDocument-property-protocol"),api_tag("samp",$document_obj->protocol));
+ $left_dl->addElement(api_text("cArchiveDocument-property-id"),api_tag("samp",$document_obj->id));
  $left_dl->addElement(api_text("cArchiveDocument-property-fkCategory"),$document_obj->getCategory()->getLabel(false,true));
  // build right description list
  $right_dl=new strDescriptionList("br","dl-horizontal");
@@ -40,7 +40,7 @@
   // additional controls
   $form->addControl("button",api_text("form-fc-cancel"),"#",null,null,null,"data-dismiss='modal'");
   // build modal
-  $modal=new strModal(api_text("documents_view-file-modal-title",$document_obj->protocol),null,"documents_view-file");
+  $modal=new strModal(api_text("documents_view-file-modal-title",$document_obj->id),null,"documents_view-file");
   $modal->setBody($form->render(1));
   // add modal to application
   $app->addModal($modal);

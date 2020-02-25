@@ -54,13 +54,12 @@
  <text key="cArchiveDocument-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questo documento dal database?</text>
  <text key="cArchiveDocument-warning-deleted">Attenzione, questo documento risulta eliminato!</text>
  <text key="cArchiveDocument-property-fkCategory">Categoria</text>
- <text key="cArchiveDocument-property-protocol">Protocollo</text>
+ <text key="cArchiveDocument-property-id">Protocollo</text>
  <text key="cArchiveDocument-property-date">Data</text>
  <text key="cArchiveDocument-property-name">Documento</text>
  <text key="cArchiveDocument-property-description">Descrizione</text>
  <text key="cArchiveDocument-property-file">File</text>
  <text key="cArchiveDocument-placeholder-fkCategory">Seleziona una categoria..</text>
- <text key="cArchiveDocument-placeholder-protocol">Idenditificativo univoco del documento</text>
  <text key="cArchiveDocument-placeholder-name">Nome del documento</text>
  <text key="cArchiveDocument-placeholder-description">Eventuale descrizione del documento</text>
  <text key="cArchiveDocument-placeholder-file">Attenzione, caricando un nuovo file il precedente verrà sostituito</text>

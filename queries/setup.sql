@@ -43,16 +43,14 @@ CREATE TABLE IF NOT EXISTS `archive__documents` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `fkCategory` int(11) UNSIGNED NOT NULL,
-  `protocol` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci,
   `file` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `protocol` (`protocol`),
   KEY `fkCategory` (`fkCategory`),
   CONSTRAINT `archive__documents_ibfk_1` FOREIGN KEY (`fkCategory`) REFERENCES `archive__categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1000000001 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 

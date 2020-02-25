@@ -20,7 +20,6 @@
   protected $id;
   protected $deleted;
   protected $fkCategory;
-  protected $protocol;
   protected $date;
   protected $name;
   protected $description;
@@ -40,14 +39,6 @@
    // return
    return implode(" | ",$return_array);
   }
-
-  /**
-   * Load from Protocol
-   *
-   * @param string $protocol Protocol
-   * @return boolean
-   */
-  public function loadFromProtocol($protocol){return parent::loadFromKey("protocol",$protocol);}
 
   /**
    * Get Category
@@ -71,20 +62,6 @@
   }
 
   /**
-   * Store
-   *
-   * @param mixed[] $properties Array of properties
-   * @param boolean $log Log event
-   * @return boolean
-   */
-  public function store(array $properties,$log=true){
-   // if new document make protocol
-   if(!$this->exists()){$properties['protocol']=api_random(9);}
-   // call parent
-   return parent::store($properties,$log);
-  }
-
-  /**
    * Upload
    *
    * @param mixed[] $upload Uploaded file
@@ -96,7 +73,7 @@
    // checks parameters
    if(!api_uploads_check($upload)){throw new Exception("Upload file is mandatory..");}
    // make file
-   $file=$this->protocol."_".date("YmdHis").".".strtolower(end((explode(".",$upload["name"]))));
+   $file=$this->id."_".date("YmdHis").".".strtolower(end((explode(".",$upload["name"]))));
    // store uploaded file
    if(!api_uploads_store($upload,"archive",$file,true)){throw new Exception("Error uploading file..");}
    // delete previous version
@@ -134,7 +111,6 @@
    // fields
    $form->addField("select","fkCategory",api_text("cArchiveDocument-property-fkCategory"),$this->fkCategory,api_text("cArchiveDocument-placeholder-fkCategory"),null,null,null,"required");
    foreach(cArchiveCategory::availables(true) as $house_fobj){$form->addFieldOption($house_fobj->id,$house_fobj->getLabel(true,false));}
-   //$form->addField("text","protocol",api_text("cArchiveDocument-property-protocol"),$this->protocol,api_text("cArchiveDocument-placeholder-protocol"),null,null,null,"required");
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='2'");
