@@ -19,11 +19,11 @@
  foreach(cArchiveCategory::availables(true) as $category_fobj){$categories_array[$category_fobj->id]=$category_fobj->name;}
  // build filter
  $filter=new strFilter();
- $filter->addSearch(["protocol","name","description"]);
+ $filter->addSearch(["id","name","description"]);
  $filter->addItem(api_text("documents_list-filter-categories"),$categories_array,"fkCategory",null,"categories");
  // build query object
  $query=new cQuery("archive__documents",$filter->getQueryWhere());
- $query->addQueryOrderField("protocol","desc");
+ $query->addQueryOrderField("id","desc");
  // build pagination object
  $pagination=new strPagination($query->getRecordsCount());
  // cycle all results
@@ -31,7 +31,7 @@
  // build table
  $table=new strTable(api_text("documents_list-tr-unvalued"));
  $table->addHeader($filter->link(api_icon("fa-filter",api_text("filters-modal-link"),"hidden-link")),"text-center",16);
- $table->addHeader(api_text("cArchiveDocument-property-protocol"),"nowrap");
+ $table->addHeader(api_text("cArchiveDocument-property-id"),"nowrap");
  $table->addHeader("&nbsp;",null,16);
  $table->addHeader(api_text("cArchiveDocument-property-name"),null,"100%");
  $table->addHeader("&nbsp;",null,16);
@@ -49,7 +49,7 @@
   // make row
   $table->addRow(implode(" ",$tr_class_array));
   $table->addRowFieldAction(api_url(["scr"=>"documents_view","idDocument"=>$document_fobj->id]),"fa-search",api_text("table-td-view"));
-  $table->addRowField(api_tag("samp",$document_fobj->protocol),"nowrap");
+  $table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
   $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-right");
   $table->addRowField($document_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
