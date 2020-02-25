@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-->
+ ! Archive - Default localization
+ !
+ ! @package Coordinator\Modules\Archive
+ ! @author  Manuel Zavatta <manuel.zavatta@gmail.com>
+ ! @link    http://www.coordinator.it
+<!-->
+<locale>
+
+ <!-- module -->
+ <text key="archive">Archivio</text>
+ <text key="archive-description">Archivio documenti</text>
+
+ <!-- authorizations -->
+ <text key="archive-manage">Gestione</text>
+ <text key="archive-manage-description">Gestione modulo archivio</text>
+ <text key="archive-usage">Abilitazione</text>
+ <text key="archive-usage-description">Utilizzo del modulo archivio</text>
+
+ <!-- cArchiveCategory -->
+ <text key="cArchiveCategory">Categoria</text>
+ <text key="cArchiveCategory-alert-error">Si è verificato un errore durante il salvataggio della categoria</text>
+ <text key="cArchiveCategory-alert-exists">La categoria non è stata trovata</text>
+ <text key="cArchiveCategory-alert-stored">La categoria è stata salvata</text>
+ <text key="cArchiveCategory-alert-deleted">La categoria è stata eliminata</text>
+ <text key="cArchiveCategory-alert-undeleted">La categoria è stata ripristinata</text>
+ <text key="cArchiveCategory-alert-removed">La categoria è stata rimossa</text>
+ <text key="cArchiveCategory-confirm-delete">Confermi di voler eliminare questa categoria?</text>
+ <text key="cArchiveCategory-confirm-undelete">Confermi di voler ripristinare questa categoria?</text>
+ <text key="cArchiveCategory-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questa categoria dal database?</text>
+ <text key="cArchiveCategory-warning-deleted">Attenzione, questa categoria risulta eliminata!</text>
+ <text key="cArchiveCategory-property-name">Categoria</text>
+ <text key="cArchiveCategory-property-title">Descrizione</text>  <!-- trovare etichetta per title -->
+ <text key="cArchiveCategory-property-color">Colore</text>
+ <text key="cArchiveCategory-placeholder-name">Nome della categoria</text>
+ <text key="cArchiveCategory-placeholder-title">Descrizione della categoria</text>
+
+ <!-- cArchiveDocument -->
+ <text key="cArchiveDocument">Documento</text>
+ <text key="cArchiveDocument-event-created">Creazione</text>
+ <text key="cArchiveDocument-event-updated">Aggiornamento</text>
+ <text key="cArchiveDocument-event-deleted">Eliminazione</text>
+ <text key="cArchiveDocument-event-undeleted">Ripristino</text>
+ <text key="cArchiveDocument-event-removed">Rimozione</text>
+ <text key="cArchiveDocument-alert-error">Si è verificato un errore durante il salvataggio del documento</text>
+ <text key="cArchiveDocument-alert-exists">Il documento non è stato trovato</text>
+ <text key="cArchiveDocument-alert-stored">Il documento è stato salvato</text>
+ <text key="cArchiveDocument-alert-deleted">Il documento è stato eliminato</text>
+ <text key="cArchiveDocument-alert-undeleted">Il documento è stato ripristinato</text>
+ <text key="cArchiveDocument-alert-removed">Il documento è stato rimosso</text>
+ <text key="cArchiveDocument-confirm-delete">Confermi di voler eliminare questo documento?</text>
+ <text key="cArchiveDocument-confirm-undelete">Confermi di voler ripristinare questo documento?</text>
+ <text key="cArchiveDocument-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questo documento dal database?</text>
+ <text key="cArchiveDocument-warning-deleted">Attenzione, questo documento risulta eliminato!</text>
+ <text key="cArchiveDocument-property-fkCategory">Categoria</text>
+ <text key="cArchiveDocument-property-protocol">Protocollo</text>
+ <text key="cArchiveDocument-property-date">Data</text>
+ <text key="cArchiveDocument-property-name">Documento</text>
+ <text key="cArchiveDocument-property-description">Descrizione</text>
+ <text key="cArchiveDocument-property-file">File</text>
+ <text key="cArchiveDocument-placeholder-fkCategory">Seleziona una categoria..</text>
+ <text key="cArchiveDocument-placeholder-protocol">Idenditificativo univoco del documento</text>
+ <text key="cArchiveDocument-placeholder-name">Nome del documento</text>
+ <text key="cArchiveDocument-placeholder-description">Eventuale descrizione del documento</text>
+ <text key="cArchiveDocument-placeholder-file">Attenzione, caricando un nuovo file il precedente verrà sostituito</text>
+
+ <!-- navigation -->
+ <text key="nav-settings-categories">Categorie</text>
+ <text key="nav-document-list">Archivio</text>
+ <text key="nav-document-add">Aggiungi documento</text>
+ <text key="nav-document-operations-edit">Modifica documento</text>
+ <text key="nav-document-operations-upload">Carica documento</text>
+ <text key="nav-document-operations-download">Visualizza documento</text>
+
+ <!-- categories_list -->
+ <text key="categories_list">Categorie</text>
+ <text key="categories_list-tr-unvalued">Non sono presenti categorie da mostrare..</text>
+ <text key="categories_list-td-add">Aggiungi categoria</text>
+ <text key="categories_list-modal-title-add">Aggiungi categoria</text>
+ <text key="categories_list-modal-title-edit">Modifica categoria</text>
+
+ <!-- documents_list -->
+ <text key="documents_list">Archivio</text>
+ <text key="documents_list-tr-unvalued">Non sono presenti documenti da mostrare..</text>
+
+ <!-- documents_view -->
+ <text key="documents_view">Documento: <![CDATA[{0}]]></text>
+ <text key="documents_list-filter-categories">Categorie</text>
+ <text key="documents_view-tab-informations">Informazioni</text>
+ <text key="documents_view-tab-versions">Versioni</text>
+ <text key="documents_view-tab-logs">Eventi</text>
+ <text key="documents_view-informations-dt-size">Dimensione</text>
+ <text key="documents_view-file-modal-title">Carica documento <![CDATA[{0}]]></text>
+
+ <!-- documents_edit -->
+ <text key="documents_edit">Modifica: <![CDATA[{0}]]></text>
+ <text key="documents_edit-add">Aggiungi documento</text>
+
+</locale>
