@@ -8,6 +8,7 @@
  */
 
  // include classes
+ require_once(DIR."modules/archive/classes/cArchiveCategory.class.php");
  require_once(DIR."modules/archive/classes/cArchiveDocument.class.php");
 
 ?>
