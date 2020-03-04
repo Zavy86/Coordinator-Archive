@@ -72,6 +72,8 @@
   public function upload($upload,$versioning=true,$log=true){
    // checks parameters
    if(!api_uploads_check($upload)){throw new Exception("Upload file is mandatory..");}
+   // check for exist
+   if(!$this->exists()){throw new Exception("Document does not exist..");}
    // make file
    $file=$this->id."_".date("YmdHis").".".strtolower(end((explode(".",$upload["name"]))));
    // store uploaded file
@@ -108,12 +110,14 @@
   public function form_edit(array $additional_parameters=null){
    // build form
    $form=new strForm(api_url(array_merge(["mod"=>"archive","scr"=>"controller","act"=>"store","obj"=>"cArchiveDocument","idDocument"=>$this->id],$additional_parameters)),"POST",null,null,"archive_document_edit_form");
-   // fields
+   // inputs
    $form->addField("select","fkCategory",api_text("cArchiveDocument-property-fkCategory"),$this->fkCategory,api_text("cArchiveDocument-placeholder-fkCategory"),null,null,null,"required");
    foreach(cArchiveCategory::availables(true) as $house_fobj){$form->addFieldOption($house_fobj->id,$house_fobj->getLabel(true,false));}
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='2'");
+   // chcek if exists
+   if(!$this->exists()){$form->addField("file","file",api_text("cArchiveDocument-property-file"),null,null,null,null,null,"required accept='.pdf'");}
    // controls
    $form->addControl("submit",api_text("form-fc-submit"));
    // return

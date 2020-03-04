@@ -69,7 +69,7 @@
  <text key="nav-document-list">Archivio</text>
  <text key="nav-document-add">Aggiungi documento</text>
  <text key="nav-document-operations-edit">Modifica documento</text>
- <text key="nav-document-operations-upload">Carica documento</text>
+ <text key="nav-document-operations-upload">Sostitisci documento</text>
  <text key="nav-document-operations-download">Visualizza documento</text>
 
  <!-- categories_list -->

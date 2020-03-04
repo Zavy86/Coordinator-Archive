@@ -79,6 +79,7 @@
    switch($action){
     case "store":
      $document_obj->store($_REQUEST);
+     if(api_uploads_check($_FILES["file"])){$document_obj->upload($_FILES["file"],false,false);}
      api_alerts_add(api_text("cArchiveDocument-alert-stored"),"success");
      break;
     case "upload":
