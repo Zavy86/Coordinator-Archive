@@ -141,8 +141,17 @@
    return $form;
   }
 
-  // Disable remove function
-  public function remove(){throw new Exception("Document remove function disabled by developer..");}
+  /**
+   * Remove
+   *
+   * @return boolean
+   */
+  public function remove(){
+   // remove file if exist
+   if(!$this->file){api_uploads_remove("archive",$this->file);}
+   // call parent and return
+   return parent::remove();
+  }
 
   // debug
   //protected function event_triggered($event){api_dump($event,static::class." event triggered");}
