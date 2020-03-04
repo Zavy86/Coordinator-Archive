@@ -90,23 +90,6 @@
   }
 
   /**
-   * File form
-   *
-   * @param string[] $additional_parameters Array of url additional parameters
-   * @return object Form structure
-   */
-  public function form_file(array $additional_parameters=null){
-   // build form
-   $form=new strForm(api_url(array_merge(["mod"=>"archive","scr"=>"controller","act"=>"upload","obj"=>"cArchiveCategory","idCategory"=>$this->id],$additional_parameters)),"POST",null,null,"archive_category_file_form");
-   // inputs
-   $form->addField("file","file",api_text("cArchiveCategory-property-file"),null,null,null,null,null,"required accept='.pdf'");
-   // controls
-   $form->addControl("submit",api_text("form-fc-submit"));
-   // return
-   return $form;
-  }
-
-  /**
    * Remove
    *
    * @return boolean|exception
@@ -115,7 +98,7 @@
    // check if category is empty
    if(count($this->getDocuments())){
     // exception if not empty
-    throw new Exception("Category remove function unpossible if not empty..");
+    throw new Exception("Category remove function denied if not empty..");
    }else{
     // remove category
     return parent::remove();
