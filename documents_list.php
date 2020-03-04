@@ -52,7 +52,7 @@
   $table->addRow(implode(" ",$tr_class_array));
   $table->addRowFieldAction(api_url(["scr"=>"documents_view","idDocument"=>$document_fobj->id]),"fa-search",api_text("table-td-view"));
   $table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
-  $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-right");
+  $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-center");
   $table->addRowField(api_date_format($document_fobj->date,api_text("date")),"nowrap");
   $table->addRowField($document_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
