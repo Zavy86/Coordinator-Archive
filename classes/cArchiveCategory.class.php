@@ -24,6 +24,20 @@
   protected $color;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
+   if(!strlen(trim($this->color))){throw new Exception("Category color is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Get Label
    *
    * @param boolean $dot Show colored dot
@@ -55,20 +69,6 @@
    * @return objects[] Documents array
    */
   public function getDocuments(){return cArchiveDocument::availables(true,["fkCategory"=>$this->id]);}
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->name))){throw new Exception("Category name is mandatory..");}
-   if(!strlen(trim($this->color))){throw new Exception("Category color is mandatory..");}
-   // return
-   return true;
-  }
 
   /**
    * Edit form

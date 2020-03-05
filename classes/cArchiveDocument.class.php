@@ -26,6 +26,20 @@
   protected $file;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->fkCategory))){throw new Exception("Document category key is mandatory..");}
+   if(!strlen(trim($this->name))){throw new Exception("Document name is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Decode log properties
    *
    * {@inheritdoc}
@@ -46,20 +60,6 @@
    * @return object Category object
    */
   public function getCategory(){return new cArchiveCategory($this->fkCategory);}
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->fkCategory))){throw new Exception("Document category key is mandatory..");}
-   if(!strlen(trim($this->name))){throw new Exception("Document name is mandatory..");}
-   // return
-   return true;
-  }
 
   /**
    * Upload
