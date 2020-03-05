@@ -38,11 +38,6 @@
 
  <!-- cArchiveDocument -->
  <text key="cArchiveDocument">Documento</text>
- <text key="cArchiveDocument-event-created">Creazione</text>
- <text key="cArchiveDocument-event-updated">Aggiornamento</text>
- <text key="cArchiveDocument-event-deleted">Eliminazione</text>
- <text key="cArchiveDocument-event-undeleted">Ripristino</text>
- <text key="cArchiveDocument-event-removed">Rimozione</text>
  <text key="cArchiveDocument-alert-error">Si è verificato un errore durante il salvataggio del documento</text>
  <text key="cArchiveDocument-alert-exists">Il documento non è stato trovato</text>
  <text key="cArchiveDocument-alert-stored">Il documento è stato salvato</text>
