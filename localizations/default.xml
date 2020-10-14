@@ -31,18 +31,13 @@
  <text key="cArchiveCategory-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questa categoria dal database?</text>
  <text key="cArchiveCategory-warning-deleted">Attenzione, questa categoria risulta eliminata!</text>
  <text key="cArchiveCategory-property-name">Categoria</text>
- <text key="cArchiveCategory-property-title">Descrizione</text>  <!-- trovare etichetta per title -->
+ <text key="cArchiveCategory-property-title">Descrizione</text>  <!-- @todo trovare etichetta decente per title -->
  <text key="cArchiveCategory-property-color">Colore</text>
  <text key="cArchiveCategory-placeholder-name">Nome della categoria</text>
  <text key="cArchiveCategory-placeholder-title">Descrizione della categoria</text>
 
  <!-- cArchiveDocument -->
  <text key="cArchiveDocument">Documento</text>
- <text key="cArchiveDocument-event-created">Creazione</text>
- <text key="cArchiveDocument-event-updated">Aggiornamento</text>
- <text key="cArchiveDocument-event-deleted">Eliminazione</text>
- <text key="cArchiveDocument-event-undeleted">Ripristino</text>
- <text key="cArchiveDocument-event-removed">Rimozione</text>
  <text key="cArchiveDocument-alert-error">Si è verificato un errore durante il salvataggio del documento</text>
  <text key="cArchiveDocument-alert-exists">Il documento non è stato trovato</text>
  <text key="cArchiveDocument-alert-stored">Il documento è stato salvato</text>

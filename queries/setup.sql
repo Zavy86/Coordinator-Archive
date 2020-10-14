@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `archive__categories` (
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `color` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `color` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

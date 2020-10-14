@@ -26,6 +26,20 @@
   protected $file;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->fkCategory))){throw new Exception("Document category key is mandatory..");}
+   if(!strlen(trim($this->name))){throw new Exception("Document name is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Decode log properties
    *
    * {@inheritdoc}
@@ -46,20 +60,6 @@
    * @return object Category object
    */
   public function getCategory(){return new cArchiveCategory($this->fkCategory);}
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->fkCategory))){throw new Exception("Document category key is mandatory..");}
-   if(!strlen(trim($this->name))){throw new Exception("Document name is mandatory..");}
-   // return
-   return true;
-  }
 
   /**
    * Upload
@@ -112,7 +112,7 @@
    $form=new strForm(api_url(array_merge(["mod"=>"archive","scr"=>"controller","act"=>"store","obj"=>"cArchiveDocument","idDocument"=>$this->id],$additional_parameters)),"POST",null,null,"archive_document_edit_form");
    // inputs
    $form->addField("select","fkCategory",api_text("cArchiveDocument-property-fkCategory"),$this->fkCategory,api_text("cArchiveDocument-placeholder-fkCategory"),null,null,null,"required");
-   foreach(cArchiveCategory::availables(true) as $house_fobj){$form->addFieldOption($house_fobj->id,$house_fobj->getLabel(true,false));}
+   foreach(cArchiveCategory::availables(true) as $category_fobj){$form->addFieldOption($category_fobj->id,$category_fobj->getLabel(true,false));}
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='2'");
@@ -141,8 +141,19 @@
    return $form;
   }
 
-  // Disable remove function
-  public function remove(){throw new Exception("Document remove function disabled by developer..");}
+  /**
+   * Remove
+   *
+   * @return boolean
+   */
+  public function remove(){
+   // disabled
+   throw new Exception("Document remove function disabled by developer..");
+   // remove file if exist
+   if(!$this->file){api_uploads_remove("archive",$this->file);}
+   // call parent and return
+   return parent::remove();
+  }
 
   // debug
   //protected function event_triggered($event){api_dump($event,static::class." event triggered");}
