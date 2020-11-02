@@ -10,5 +10,5 @@
  $module_name="archive";
  $module_repository_url="https://github.com/Zavy86/Coordinator-Archive/";
  $module_repository_version_url="https://raw.githubusercontent.com/Zavy86/Coordinator-Archive/master/VERSION.txt";
- $module_required_modules=array();
+ $module_required_modules=array("registries");
 ?>
