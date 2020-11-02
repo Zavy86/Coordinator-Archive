@@ -35,6 +35,7 @@
  $table->addHeader(api_text("cArchiveDocument-property-id"),"nowrap");
  $table->addHeader("&nbsp;",null,16);
  $table->addHeader(api_text("cArchiveDocument-property-date"),"nowrap");
+ $table->addHeader(api_text("cArchiveDocument-property-fkRegistry"),"nowrap");
  $table->addHeader(api_text("cArchiveDocument-property-name"),null,"100%");
  $table->addHeader("&nbsp;",null,16);
  // cycle all documents
@@ -54,6 +55,7 @@
   $table->addRowField(api_tag("samp",$document_fobj->id),"nowrap");
   $table->addRowField($document_fobj->getCategory()->getDot(),"nowrap text-center");
   $table->addRowField(api_date_format($document_fobj->date,api_text("date")),"nowrap");
+  $table->addRowField($document_fobj->getRegistry()->name,"nowrap");
   $table->addRowField($document_fobj->name,"truncate-ellipsis");
   $table->addRowField($ob->render(),"nowrap text-right");
  }
