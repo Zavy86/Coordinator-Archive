@@ -20,6 +20,7 @@
   protected $id;
   protected $deleted;
   protected $fkCategory;
+  protected $fkRegistry;
   protected $date;
   protected $name;
   protected $description;
@@ -60,6 +61,13 @@
    * @return object Category object
    */
   public function getCategory(){return new cArchiveCategory($this->fkCategory);}
+
+  /**
+   * Get Registry
+   *
+   * @return object Registry object
+   */
+  public function getRegistry(){return new cRegistriesRegistry($this->fkRegistry);}
 
   /**
    * Upload
@@ -113,6 +121,8 @@
    // inputs
    $form->addField("select","fkCategory",api_text("cArchiveDocument-property-fkCategory"),$this->fkCategory,api_text("cArchiveDocument-placeholder-fkCategory"),null,null,null,"required");
    foreach(cArchiveCategory::availables(true) as $category_fobj){$form->addFieldOption($category_fobj->id,$category_fobj->getLabel(true,false));}
+   $form->addField("select","fkRegistry",api_text("cArchiveDocument-property-fkRegistry"),$this->fkRegistry,api_text("cArchiveDocument-placeholder-fkRegistry"),null,null,null,"required");
+   foreach(cRegistriesRegistry::availables(true) as $registry_fobj){$form->addFieldOption($registry_fobj->id,$registry_fobj->name);}
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='2'");

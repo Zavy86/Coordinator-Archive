@@ -22,10 +22,11 @@
  // build document description list
  $left_dl=new strDescriptionList("br","dl-horizontal");
  $left_dl->addElement(api_text("cArchiveDocument-property-id"),api_tag("samp",$document_obj->id));
- $left_dl->addElement(api_text("cArchiveDocument-property-fkCategory"),$document_obj->getCategory()->getLabel(false,true));
+ $left_dl->addElement(api_text("cArchiveDocument-property-name"),api_tag("strong",$document_obj->name));
+ $left_dl->addElement(api_text("cArchiveDocument-property-fkRegistry"),$document_obj->getRegistry()->name);
  // build right description list
  $right_dl=new strDescriptionList("br","dl-horizontal");
- $right_dl->addElement(api_text("cArchiveDocument-property-name"),api_tag("strong",$document_obj->name));
+ $right_dl->addElement(api_text("cArchiveDocument-property-fkCategory"),$document_obj->getCategory()->getLabel(false,true));
  if($document_obj->description){$right_dl->addElement(api_text("cArchiveDocument-property-description"),nl2br($document_obj->description));}
  // include tabs
  require_once(MODULE_PATH."documents_view-informations.inc.php");
