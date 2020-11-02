@@ -31,6 +31,8 @@
  $grid->addCol($form->render(),"col-xs-12");
  // add content to document
  $app->addContent($grid->render());
+ // modal scripts
+ $app->addScript("$(document).ready(function(){\$('select[name=\"fkRegistry\"]').select2();});");
  // renderize document
  $app->render();
  // debug
