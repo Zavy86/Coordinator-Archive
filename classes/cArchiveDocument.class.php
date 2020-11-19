@@ -125,7 +125,7 @@
    foreach(cRegistriesRegistry::availables(true) as $registry_fobj){$form->addFieldOption($registry_fobj->id,$registry_fobj->name);}
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
-   $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='2'");
+   $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='3'");
    // chcek if exists
    if(!$this->exists()){$form->addField("file","file",api_text("cArchiveDocument-property-file"),null,null,null,null,null,"required accept='.pdf'");}
    // controls
