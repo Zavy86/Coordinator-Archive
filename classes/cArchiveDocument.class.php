@@ -120,9 +120,9 @@
    $form=new strForm(api_url(array_merge(["mod"=>"archive","scr"=>"controller","act"=>"store","obj"=>"cArchiveDocument","idDocument"=>$this->id],$additional_parameters)),"POST",null,null,"archive_document_edit_form");
    // inputs
    $form->addField("select","fkCategory",api_text("cArchiveDocument-property-fkCategory"),$this->fkCategory,api_text("cArchiveDocument-placeholder-fkCategory"),null,null,null,"required");
-   foreach(cArchiveCategory::availables(true) as $category_fobj){$form->addFieldOption($category_fobj->id,$category_fobj->getLabel(true,false));}
+   foreach(api_sortObjectsArray(cArchiveCategory::availables(true),"name") as $category_fobj){$form->addFieldOption($category_fobj->id,$category_fobj->getLabel(true,false));}
    $form->addField("select","fkRegistry",api_text("cArchiveDocument-property-fkRegistry"),$this->fkRegistry,api_text("cArchiveDocument-placeholder-fkRegistry"),null,null,null,"required");
-   foreach(cRegistriesRegistry::availables(true) as $registry_fobj){$form->addFieldOption($registry_fobj->id,$registry_fobj->name);}
+   foreach(api_sortObjectsArray(cRegistriesRegistry::availables(true),"name") as $registry_fobj){$form->addFieldOption($registry_fobj->id,$registry_fobj->name);}
    $form->addField("date","date",api_text("cArchiveDocument-property-date"),$this->date,null,null,null,null,"required");
    $form->addField("text","name",api_text("cArchiveDocument-property-name"),$this->name,api_text("cArchiveDocument-placeholder-name"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cArchiveDocument-property-description"),$this->description,api_text("cArchiveDocument-placeholder-description"),null,null,null,"rows='3'");
