@@ -15,12 +15,16 @@
  $app->setTitle(api_text("documents_list"));
  // definitions
  $categories_array=array();
+ $registries_array=array();
  // get categories
  foreach(cArchiveCategory::availables(true) as $category_fobj){$categories_array[$category_fobj->id]=$category_fobj->name;}
+ // get registries
+ foreach(cRegistriesRegistry::availables(true) as $registry_fobj){$registries_array[$registry_fobj->id]=$registry_fobj->name;}
  // build filter
  $filter=new strFilter();
  $filter->addSearch(["id","name","description"]);
  $filter->addItem(api_text("documents_list-filter-categories"),$categories_array,"fkCategory",null,"categories");
+ $filter->addItem(api_text("documents_list-filter-registries"),$registries_array,"fkRegistry",null,"registries");
  // build query object
  $query=new cQuery("archive__documents",$filter->getQueryWhere());
  $query->addQueryOrderField("date","desc");

@@ -83,6 +83,7 @@
  <!-- documents_view -->
  <text key="documents_view">Documento: <![CDATA[{0}]]></text>
  <text key="documents_list-filter-categories">Categorie</text>
+ <text key="documents_list-filter-registries">Anagrafiche</text>
  <text key="documents_view-tab-informations">Informazioni</text>
  <text key="documents_view-tab-versions">Versioni</text>
  <text key="documents_view-tab-logs">Eventi</text>
